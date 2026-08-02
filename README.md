@@ -16,22 +16,36 @@ If it can't, we say so on camera. Those wishes get **busted**.
 
 ## Running it
 
-It's a plain static site — no build step, no dependencies. Open
-`index.html` in a browser, or serve the folder:
+It's a plain static site — no build step, no dependencies:
 
 ```
-python3 -m http.server 8000
+cd public && python3 -m http.server 8000
 ```
 
 Then visit <http://localhost:8000>.
 
+## Deploying
+
+Hosted on Cloudflare Workers static assets. One-off, per machine:
+
+```
+npx wrangler login
+```
+
+Then, any time:
+
+```
+npx wrangler deploy
+```
+
 ## Layout
 
 ```
-index.html           the whole page
-assets/styles.css    tokens + components
-assets/main.js       rain canvas, typewriter, reveals, filters
-build-preview.js     bundles the above into one shareable file
+public/index.html         the whole page
+public/assets/styles.css  tokens + components
+public/assets/main.js     rain canvas, typewriter, reveals, filters
+wrangler.jsonc            Cloudflare deploy config
+build-preview.js          bundles the site into one shareable file
 ```
 
 ## Design

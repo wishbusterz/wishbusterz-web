@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wishbusterz-web",
+  "compatibility_date": "2026-08-02",
+
+  // Everything in ./public is served as a static site.
+  // There is no Worker script — this is assets only.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

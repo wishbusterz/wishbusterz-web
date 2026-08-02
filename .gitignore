@@ -22,3 +22,7 @@ Thumbs.db
 
 # Bundled preview output
 preview.html
+
+# Wrangler
+.wrangler/
+node_modules/

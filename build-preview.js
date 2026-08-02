@@ -4,7 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const root = __dirname;
+const root = path.join(__dirname, "public");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "assets/styles.css"), "utf8");
 const js = fs.readFileSync(path.join(root, "assets/main.js"), "utf8");
@@ -22,6 +22,6 @@ const out = [
   ""
 ].join("\n");
 
-const dest = process.argv[2] || path.join(root, "preview.html");
+const dest = process.argv[2] || path.join(__dirname, "preview.html");
 fs.writeFileSync(dest, out);
 console.log(`built ${dest} — ${(out.length / 1024).toFixed(1)} kB`);
