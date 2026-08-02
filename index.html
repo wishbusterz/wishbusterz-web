@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" data-variant="classic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wishbusterz — you have a wish, we find out if AI can grant it</title>
+<meta name="description" content="Someone has a wish. We find out whether AI can solve it. If it can, we build it and open-source the code.">
+<link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+
+<canvas id="rain" aria-hidden="true"></canvas>
+<div class="scrim" aria-hidden="true"></div>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true">&gt;</span>
+      <span class="logo-text">WISHBUSTERZ</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#projects" data-scramble>Projects</a>
+      <a href="#wiki" data-scramble>Wiki</a>
+      <a href="#about" data-scramble>About</a>
+      <a href="#follow" class="nav-live" data-scramble><span class="dot" aria-hidden="true"></span>Live</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="shell">
+      <p class="eyebrow">Wish #047 &middot; submitted by Dani, Budapest</p>
+      <h1 class="hero-h">
+        <span class="type" data-type="Can AI make my cat text me?"></span><span class="caret" aria-hidden="true"></span>
+      </h1>
+      <p class="hero-sub">
+        You have a wish. We find out whether AI can actually grant it —
+        on camera, mistakes included. If it works, the code is yours.
+        If it doesn't, we say so.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">Browse the wishes</a>
+        <a class="btn btn-ghost" href="#submit">Submit your wish</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Wishes granted</dt><dd>31</dd></div>
+        <div><dt>Wishes busted</dt><dd>16</dd></div>
+        <div><dt>Repos published</dt><dd>31</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="band" id="how">
+    <div class="shell">
+      <h2 class="sec-h" data-scramble>How a wish becomes code</h2>
+      <p class="sec-sub">Three steps, in this order, every time.</p>
+      <ol class="steps">
+        <li>
+          <span class="step-n">01</span>
+          <h3>You wish</h3>
+          <p>Anyone sends in something they want to exist. No technical detail needed — describe it like you'd describe it to a friend.</p>
+        </li>
+        <li>
+          <span class="step-n">02</span>
+          <h3>We test it</h3>
+          <p>Live on stream, we find out whether today's AI can genuinely do it. Plenty of wishes get busted here, and that episode still goes out.</p>
+        </li>
+        <li>
+          <span class="step-n">03</span>
+          <h3>You keep it</h3>
+          <p>Anything that works ships to GitHub under an open licence, with a wiki page explaining the prompts and the wiring.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="band" id="projects">
+    <div class="shell">
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-h" data-scramble>The wishes</h2>
+          <p class="sec-sub">Every wish we've taken on, granted or busted.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter wishes">
+          <button class="chip is-on" data-filter="all">All</button>
+          <button class="chip" data-filter="granted">Granted</button>
+          <button class="chip" data-filter="busted">Busted</button>
+          <button class="chip" data-filter="live">In progress</button>
+        </div>
+      </div>
+
+      <div class="cards" id="cards">
+        <article class="card" data-state="granted">
+          <div class="card-top"><span class="num">#047</span><span class="pill pill-ok">Granted</span></div>
+          <h3>Cat Texter</h3>
+          <p class="wish">&ldquo;Can AI make my cat text me?&rdquo;</p>
+          <p class="card-body">A door sensor, a camera and a vision model. When the cat goes out, you get a message in the cat's voice. It is insufferable and we love it.</p>
+          <footer class="card-foot"><span>Python</span><span>MIT</span><span class="go">Get the code →</span></footer>
+        </article>
+
+        <article class="card" data-state="granted">
+          <div class="card-top"><span class="num">#041</span><span class="pill pill-ok">Granted</span></div>
+          <h3>Fridge Poet</h3>
+          <p class="wish">&ldquo;Can AI write a poem from whatever's in my fridge?&rdquo;</p>
+          <p class="card-body">Photograph the shelf, get a verse and a recipe you can actually cook. Works offline on a laptop.</p>
+          <footer class="card-foot"><span>TypeScript</span><span>MIT</span><span class="go">Get the code →</span></footer>
+        </article>
+
+        <article class="card" data-state="busted">
+          <div class="card-top"><span class="num">#044</span><span class="pill pill-no">Busted</span></div>
+          <h3>The Meeting Escape</h3>
+          <p class="wish">&ldquo;Can AI invent a believable excuse to leave a call?&rdquo;</p>
+          <p class="card-body">It can, easily — which is exactly why we stopped. We built it, watched it work, and decided not to ship a lying machine. Episode explains the call.</p>
+          <footer class="card-foot"><span>Not published</span><span class="go">Watch why →</span></footer>
+        </article>
+
+        <article class="card" data-state="granted">
+          <div class="card-top"><span class="num">#038</span><span class="pill pill-ok">Granted</span></div>
+          <h3>Plant Nanny</h3>
+          <p class="wish">&ldquo;Can AI tell me why my plant is dying?&rdquo;</p>
+          <p class="card-body">Point a phone at a sad leaf, get a diagnosis and a watering schedule. Runs on a Raspberry Pi in the window.</p>
+          <footer class="card-foot"><span>Python</span><span>MIT</span><span class="go">Get the code →</span></footer>
+        </article>
+
+        <article class="card" data-state="live">
+          <div class="card-top"><span class="num">#052</span><span class="pill pill-live">In progress</span></div>
+          <h3>Dream Logger</h3>
+          <p class="wish">&ldquo;Can AI turn my half-asleep voice notes into a dream journal?&rdquo;</p>
+          <p class="card-body">Mumbling at 3am transcribes badly. That's the whole problem, and it's what we're streaming this week.</p>
+          <footer class="card-foot"><span>Streaming Thursday</span><span class="go">Watch live →</span></footer>
+        </article>
+
+        <article class="card" data-state="busted">
+          <div class="card-top"><span class="num">#029</span><span class="pill pill-no">Busted</span></div>
+          <h3>Perfect Setlist</h3>
+          <p class="wish">&ldquo;Can AI build a setlist that reads the room?&rdquo;</p>
+          <p class="card-body">Every model produced something technically correct and completely joyless. Some wishes need a person. Busted, honestly.</p>
+          <footer class="card-foot"><span>Not published</span><span class="go">Watch why →</span></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WIKI ============ -->
+  <section class="band" id="wiki">
+    <div class="shell">
+      <h2 class="sec-h" data-scramble>The wiki</h2>
+      <p class="sec-sub">Prompts, wiring and hard-won lessons. Take any of it.</p>
+      <ul class="wiki">
+        <li>
+          <a href="#">
+            <span class="wk-cat">Prompting</span>
+            <span class="wk-t">The prompt that stops a model apologising at you</span>
+            <span class="wk-m">6 min</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="wk-cat">Wiring</span>
+            <span class="wk-t">Connecting a webhook to a language model in 20 lines</span>
+            <span class="wk-m">9 min</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="wk-cat">Method</span>
+            <span class="wk-t">How we decide whether a wish is even possible</span>
+            <span class="wk-m">4 min</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="wk-cat">Hardware</span>
+            <span class="wk-t">Running a model on a Raspberry Pi without cooking it</span>
+            <span class="wk-m">12 min</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="wk-cat">Scaffold</span>
+            <span class="wk-t">Our standard project layout, and why it's boring on purpose</span>
+            <span class="wk-m">5 min</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="band" id="about">
+    <div class="shell about">
+      <div>
+        <h2 class="sec-h" data-scramble>About</h2>
+        <p class="lede">
+          Wishbusterz started from a simple, slightly annoying question:
+          people keep saying AI can do anything, so — can it do <em>this</em>?
+        </p>
+        <p>
+          We take one wish at a time and actually try. The building happens
+          live on Twitch, the edited version lands on YouTube, and everything
+          that survives contact with reality gets open-sourced so you can run
+          it yourself.
+        </p>
+        <p>
+          Half the wishes get busted. We publish those too. An honest failure
+          is more useful than a demo that only works once.
+        </p>
+      </div>
+      <aside class="callout" id="submit">
+        <h3>Got a wish?</h3>
+        <p>Describe the thing you want to exist. Plain words, no tech needed.</p>
+        <a class="btn" href="mailto:mate@wishbusterz.com?subject=My%20wish">Send it in</a>
+        <p class="small">Or drop it in the Twitch chat while we're live.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FOLLOW ============ -->
+  <section class="band band-end" id="follow">
+    <div class="shell">
+      <h2 class="sec-h" data-scramble>Follow along</h2>
+      <p class="sec-sub">Builds on YouTube, mistakes live on Twitch.</p>
+      <div class="follow">
+        <a class="fbtn" href="#"><span class="fbtn-p">YouTube</span><span class="fbtn-m">The finished builds</span></a>
+        <a class="fbtn" href="#"><span class="fbtn-p">Twitch</span><span class="fbtn-m">Live, unedited, Thursdays</span></a>
+        <a class="fbtn" href="#"><span class="fbtn-p">GitHub</span><span class="fbtn-m">Every granted wish</span></a>
+        <a class="fbtn" href="#"><span class="fbtn-p">Facebook</span><span class="fbtn-m">Coming soon</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell foot-in">
+    <span>Wishbusterz &copy; 2026</span>
+    <span>Code open-sourced under MIT unless noted</span>
+    <a href="mailto:mate@wishbusterz.com">mate@wishbusterz.com</a>
+  </div>
+</footer>
+
+<!-- Preview-only control. Remove this block and the .switch CSS/JS once a variant is chosen. -->
+<div class="switch" id="switch">
+  <button class="switch-toggle" id="switchToggle" aria-expanded="false" aria-controls="switchPanel">
+    <span aria-hidden="true">◧</span> Style: <b id="switchName">Classic Cascade</b>
+  </button>
+  <div class="switch-panel" id="switchPanel" hidden>
+    <p class="switch-lbl">Five iterations of 04</p>
+    <button data-v="classic"><b>1 · Classic Cascade</b><i>Canonical. Full rain, maximum glow.</i></button>
+    <button data-v="terminal"><b>2 · Terminal Discipline</b><i>Rain pulled right back. Built to be read.</i></button>
+    <button data-v="redpill"><b>3 · Red Pill</b><i>Same cascade, wrong colour. Warning-red.</i></button>
+    <button data-v="rabbit"><b>4 · White Rabbit</b><i>Inverted. Daylight Matrix, wiki-friendly.</i></button>
+    <button data-v="construct"><b>5 · Deep Construct</b><i>Cyan-teal, glass panels, cinematic depth.</i></button>
+  </div>
+</div>
+
+<script src="./assets/main.js"></script>
+</body>
+</html>

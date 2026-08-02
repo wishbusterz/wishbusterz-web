@@ -19,3 +19,6 @@ npm-debug.log*
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Bundled preview output
+preview.html
