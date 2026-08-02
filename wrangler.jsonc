@@ -10,6 +10,12 @@
     "not_found_handling": "404-page"
   },
 
+  // Live on the apex domain. custom_domain makes Cloudflare create the
+  // DNS record and the TLS certificate for us.
+  "routes": [
+    { "pattern": "therustylamp.com", "custom_domain": true }
+  ],
+
   "observability": {
     "enabled": true
   }

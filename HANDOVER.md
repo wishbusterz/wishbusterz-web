@@ -32,25 +32,24 @@ Once chosen, delete the preview switcher: the `.switch` markup in
 `public/index.html`, the `.switch` rules in `public/assets/styles.css`,
 and section 6 of `public/assets/main.js`.
 
-## Blocked
+## Live
 
-**Cloudflare deploy.** Everything is configured (`wrangler.jsonc`,
-site in `public/`), but this machine has no Cloudflare credentials.
-Mate needs to run, in the terminal:
+**The site is deployed at <https://therustylamp.com>.**
 
-```
-npx wrangler login
-```
+- Worker `wishbusterz-web`, assets-only, on Mate's Cloudflare account.
+- The apex domain is wired via `routes` in `wrangler.jsonc` with
+  `custom_domain: true`, so Cloudflare manages the DNS record and the
+  TLS certificate. The zone had no other DNS records.
+- `wrangler login` is done; credentials live in
+  `~/.config/.wrangler/config/default.toml`. Future deploys are just
+  `npx wrangler deploy`.
 
-Confirm with `npx wrangler whoami` — it should print an account, not
-"You are not authenticated". Then `npx wrangler deploy` puts it live at
-`wishbusterz-web.<subdomain>.workers.dev`.
+Note for next time: the Cloudflare MCP tools are authenticated and
+good for *inspecting* the account, but cannot deploy — the sandbox has
+no filesystem access, can only reach `api.cloudflare.com`, and is not
+allowed to mint API tokens. Use wrangler for anything that ships files.
 
-Note: logging into the Cloudflare website is **not** the same thing.
-The command must run in the terminal on this machine.
-
-Open question: is **wishbusterz.com** on the same Cloudflare account?
-If so the site can point there instead of a workers.dev subdomain.
+No workers.dev subdomain was registered; the custom domain replaces it.
 
 ## Placeholder content to replace
 
